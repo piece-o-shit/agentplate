@@ -1,0 +1,42 @@
+{
+  "name": "out",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "create-accounts": "node scripts/create-test-accounts.js",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+  "test": "echo \"No tests specified\" && exit 0",
+    "create-admin": "tsx scripts/create-admin.ts",
+    "init-database": "tsx scripts/init-database.ts",
+    "init-agent-framework": "tsx scripts/init-agent-framework.ts",
+    "init-test-user": "tsx scripts/init-test-user.ts",
+    "test-agent-api": "npm run init-test-user && tsx scripts/test-agent-api.ts",
+    "setup-all": "npm run init-database && npm run init-agent-framework"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.48.1",
+    "clsx": "^2.1.1",
+    "dotenv": "^16.4.7",
+    "next": "15.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.0.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.6",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5"
+  }
+}

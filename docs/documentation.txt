@@ -1,0 +1,193 @@
+AGENTPLATE - Next.js Agent Management Platform
+
+PROJECT OVERVIEW
+AgentPlate is a modern web application built with Next.js that provides a robust foundation for managing and monitoring automated agents. The platform includes user authentication, role-based access control, activity logging, and a comprehensive admin panel.
+
+TECH STACK
+- Frontend: Next.js 13+ (App Router), React, TypeScript, Tailwind CSS
+- Backend: Next.js API Routes, Supabase
+- Database: PostgreSQL (via Supabase)
+- Authentication: Supabase Auth
+- State Management: React Hooks
+- UI Components: Custom components with Tailwind CSS
+- Forms: Custom form components with validation
+
+DEPENDENCIES
+- next: ^13.0.0
+- react: ^18.0.0
+- typescript: ^5.0.0
+- tailwindcss: ^3.0.0
+- @supabase/supabase-js: Latest version
+- Other dependencies can be found in package.json
+
+PROJECT STRUCTURE
+/project-root
+├── apps
+│   └── web
+│       ├── components       # Reusable UI components
+│       ├── hooks           # Custom React hooks
+│       ├── layouts         # Page layouts
+│       ├── pages
+│       │   ├── index.tsx   # Landing page
+│       │   ├── login.tsx   # Login page
+│       │   ├── signup.tsx  # Signup page
+│       │   ├── admin      # Admin panel
+│       │   └── user       # User panel
+│       ├── lib            # Utility functions
+│       ├── styles         # CSS/SCSS files
+│       └── api           # API routes
+
+SETUP INSTRUCTIONS
+1. Clone the repository
+2. Install dependencies:
+   npm install
+
+3. Set up environment variables:
+   Copy .env.example to .env.local and fill in:
+   - NEXT_PUBLIC_SUPABASE_URL
+   - NEXT_PUBLIC_SUPABASE_ANON_KEY
+   - SUPABASE_SERVICE_ROLE_KEY
+
+4. Initialize the database:
+   - Run setup scripts in /scripts directory
+   - npm run setup:db
+
+5. Start development server:
+   npm run dev
+
+DATABASE SETUP
+1. Create a new Supabase project
+2. Run the following setup scripts in order:
+   - setup-roles.sql
+   - setup-user-tables.sql
+   - setup-activity-logs.sql
+3. Initialize data:
+   - npm run init:roles
+   - npm run init:user-tables
+   - npm run init:activity-logs
+
+AUTHENTICATION
+- Built using Supabase Auth
+- Supports email/password authentication
+- Protected routes using middleware
+- Role-based access control
+- Session management
+
+FEATURES
+1. User Management
+   - User registration and authentication
+   - Profile management
+   - Role-based access control
+   - Password reset functionality
+
+2. Admin Panel
+   - User management
+   - Activity monitoring
+   - System settings
+   - Analytics dashboard
+
+3. Activity Logging
+   - Comprehensive activity tracking
+   - Filterable activity logs
+   - Activity details formatting
+   - Activity icons for different actions
+
+4. Agent System (Coming Soon)
+   - Agent creation and management
+   - Agent monitoring
+   - Automated workflows
+   - Agent analytics
+
+DEVELOPMENT GUIDELINES
+1. Code Organization
+   - Feature-based structure
+   - Shared components in /components
+   - Feature-specific components in feature directories
+   - Utility functions in /lib
+
+2. TypeScript
+   - Strict type checking enabled
+   - Interface-first development
+   - Proper type exports
+   - Type utilities in /lib/types
+
+3. Component Guidelines
+   - Functional components with hooks
+   - Props interfaces for all components
+   - Error boundaries where needed
+   - Loading states handled properly
+
+4. State Management
+   - React hooks for local state
+   - Context for shared state
+   - Custom hooks for complex logic
+   - Proper error handling
+
+API DOCUMENTATION
+1. Auth Routes
+   - POST /api/auth/login
+   - POST /api/auth/signup
+   - POST /api/auth/logout
+   - POST /api/auth/reset-password
+
+2. User Routes
+   - GET /api/users
+   - GET /api/users/:id
+   - PUT /api/users/:id
+   - DELETE /api/users/:id
+
+3. Activity Routes
+   - GET /api/activity
+   - GET /api/activity/:id
+   - POST /api/activity
+
+4. Admin Routes
+   - GET /api/admin/users
+   - GET /api/admin/activity
+   - GET /api/admin/settings
+
+DEPLOYMENT
+1. Build the application:
+   npm run build
+
+2. Environment setup:
+   - Set production environment variables
+   - Configure Supabase production project
+   - Set up proper CORS settings
+
+3. Deploy options:
+   - Vercel (recommended)
+   - Docker container
+   - Custom server
+
+4. Post-deployment:
+   - Run database migrations
+   - Verify environment variables
+   - Test authentication flow
+   - Monitor error logging
+
+MAINTENANCE
+1. Regular Tasks
+   - Database backups
+   - Log rotation
+   - Security updates
+   - Performance monitoring
+
+2. Monitoring
+   - Error tracking
+   - Performance metrics
+   - User analytics
+   - System health checks
+
+3. Updates
+   - Dependency updates
+   - Security patches
+   - Feature updates
+   - Bug fixes
+
+SUPPORT
+For issues and support:
+1. Check existing documentation
+2. Review error logs
+3. Contact system administrator
+4. Submit bug reports with detailed information
