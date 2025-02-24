@@ -141,5 +141,3 @@ Create a new Pull Request
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-
-You can copy this entire content and update your README.md file with it. Would you like me to explain any part of it?
